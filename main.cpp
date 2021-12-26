@@ -117,7 +117,6 @@ public:
             int searchX = x + (sx - searchSize / 2);
             int searchY = y + (sy - searchSize / 2);
             float diffSum = 0.0f;
-
             for (int py = 0; py < searchSize; py++)
               for (int px = 0; px < searchSize; px++) {
                 int patchX = searchX + (px - patchSize / 2);
@@ -180,6 +179,23 @@ public:
 
     this->newFrame->copyTo(*this->oldFrame);
     this->initFlag = false;
+    return true;
+  }
+
+  bool OnUserDestroy() override {
+    delete this->frame;
+    delete this->oldFrame;
+    delete this->newFrame;
+    delete this->frameGray;
+    delete this->resizeFrame;
+    delete this->resizeFrameGray;
+    delete this->fOldFrame;
+    delete this->fNewFrame;
+    delete this->fMotion;
+    delete this->vMatX;
+    delete this->vMatY;
+    delete this->magenasiDec;
+    delete this->magenasiSpr;
     return true;
   }
 };
