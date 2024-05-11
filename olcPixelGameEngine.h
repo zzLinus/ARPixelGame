@@ -483,7 +483,7 @@ namespace _gfs = std::filesystem;
 
 #if defined(OLC_PLATFORM_X11)
 namespace X11 {
-#include <X11/X.h>
+//#include <X11/X.h>
 #include <X11/Xlib.h>
 } // namespace X11
 #endif
