@@ -1,0 +1,3 @@
+hello-eos:
+  ubuntu : [hello-eos]
+  fedora : [hello-eos]
